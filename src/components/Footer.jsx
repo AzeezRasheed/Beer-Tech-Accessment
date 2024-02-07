@@ -69,7 +69,7 @@ function Footer() {
 
         <div className="flex flex-wrap  text-start justify-between w-full items-start md:items-center md:text-center pl-6 ">
           <div className="flex space-x-6 sm:justify-center mb-4 md:mb-0">
-            <a
+            <Link
               href="/"
               style={{
                 color: theme === "light" ? "#FFFFFF" : "#C0C0C0",
@@ -78,9 +78,9 @@ function Footer() {
             >
               <BsTwitter />
               <span className="sr-only">Twitter page</span>
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="/"
               style={{
                 color: theme === "light" ? "#FFFFFF" : "#C0C0C0",
@@ -89,8 +89,8 @@ function Footer() {
             >
               <BsInstagram />
               <span className="sr-only">Instagram page</span>
-            </a>
-            <a
+            </Link>
+            <Link
               href="/"
               style={{
                 color: theme === "light" ? "#FFFFFF" : "#C0C0C0",
@@ -99,8 +99,8 @@ function Footer() {
             >
               <BsFacebook />
               <span className="sr-only">Facebook page</span>
-            </a>
-            <a
+            </Link>
+            <Link
               href="/"
               style={{
                 color: theme === "light" ? "#FFFFFF" : "#C0C0C0",
@@ -109,7 +109,7 @@ function Footer() {
             >
               <BsYoutube />
               <span className="sr-only">Youtube account</span>
-            </a>
+            </Link>
           </div>
           <h2
             className={`text-[20px] leading-[20px]font-normal font-Montserrat  ${

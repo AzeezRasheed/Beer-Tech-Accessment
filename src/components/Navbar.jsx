@@ -65,11 +65,9 @@ function Navbar() {
                 <Link href="/">Home</Link>
               </li>
               <li style={{ ...styles.list }}>
-                <a href="/"></a>
                 <Link href="/products">Shop All</Link>
               </li>{" "}
               <li style={{ ...styles.list }}>
-                <a href="/"></a>
                 <Link href="/">About Us</Link>
               </li>
               <li style={{ ...styles.list }}>

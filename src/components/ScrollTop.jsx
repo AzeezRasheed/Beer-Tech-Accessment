@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { FaChevronUp } from "react-icons/fa";
 
@@ -19,9 +20,9 @@ function ScrollTop() {
   return (
     <div className="scrolltop">
       {visible && (
-        <a href="#" className="scroll-block">
+        <Link href="#" className="scroll-block">
           <FaChevronUp />
-        </a>
+        </Link>
       )}
     </div>
   );
