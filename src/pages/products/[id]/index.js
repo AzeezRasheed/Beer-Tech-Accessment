@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
-import ImageZoom from "react-image-zooom";
+import ReactImageZoom from "react-image-zoom";
 import { useDispatch } from "react-redux";
 import { useMediaQuery } from "react-responsive";
-import CurrencyFormat from "react-currency-format";
+// import CurrencyFormat from "react-currency-format";
 import { InfinitySpin } from "react-loader-spinner";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { BsFacebook, BsInstagram, BsTwitter, BsYoutube } from "react-icons/bs";
@@ -23,6 +23,7 @@ import {
   useGetCart,
 } from "@/reducers/slice/cart.slice";
 import { getProduct } from "@/reducers/actions/product.dispatch";
+import Image from "next/image";
 
 const SocialMediaLink = styled.a`
   ${tw`
@@ -31,6 +32,9 @@ hover:text-slate-500
 `;
 const ProductInfo = () => {
   const dispatch = useDispatch();
+
+  // ImageProps = {width: 400, height: 250, zoomWidth: 500, img: "1.jpg"};
+
   const [inchesType, setInchesType] = useState("select");
   const [isLoading, setIsLoading] = useState(true);
   const [isStretchedLength, setIsStretchedLength] = useState(false);
@@ -112,12 +116,19 @@ const ProductInfo = () => {
             />
             <Stack className=" flex-col items-center lg:items-start justify-center max-w-[1000px] lg:justify-between lg:flex-row  mt-0 gap-12 mb-10 ">
               {/* Left Row */}
-              <ImageZoom
+              {/* <ReactImageZoom
                 height="100%"
-                zoom="200"
+                zoomWidth={200}
                 alt={product?.title}
                 width={isMobile ? "100%" : "423px"}
+                img={product?.image}
+              /> */}
+
+              <Image
+                width={isMobile ? "100" : "423"}
                 src={product?.image}
+                height="100"
+                className={`${isMobile ? "100%" : "423px"} h-[100%]`}
               />
 
               {/* Right Row */}
@@ -129,7 +140,7 @@ const ProductInfo = () => {
                     {product?.title}
                   </Typography>
 
-                  <CurrencyFormat
+                  {/* <CurrencyFormat
                     value={product?.price}
                     displayType={"text"}
                     thousandSeparator={true}
@@ -141,7 +152,12 @@ const ProductInfo = () => {
                         {value}
                       </Typography>
                     )}
-                  />
+                  /> */}
+                  <Typography
+                    className={"font-Poppins text-[24px] font-[500]  "}
+                  >
+                    #{product?.price}
+                  </Typography>
                 </div>
                 <StarRating rating={[]} />
 
@@ -272,7 +288,6 @@ const ProductInfo = () => {
           </Stack>
         )}
       </div>
-
     </BackgroundLayout>
   );
 };

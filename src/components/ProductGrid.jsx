@@ -1,5 +1,5 @@
 import React from "react";
-import CurrencyFormat from "react-currency-format";
+// import CurrencyFormat from "react-currency-format";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
@@ -23,10 +23,16 @@ const ProductsGrid = ({ key, data }) => {
         className="w-full"
       >
         <div className="md:w-[232px] w-full h-full  md:h-[300px] items-center  ">
-          <Image src={data?.image} alt="..." width={100} height={100} style={{
-            width: '100%',
-            height: '100%',
-          }} />
+          <Image
+            src={data?.image}
+            alt="..."
+            width={100}
+            height={100}
+            style={{
+              width: "100%",
+              height: "100%",
+            }}
+          />
         </div>
       </div>
       <div className="flex flex-col items-start  text-start">
@@ -36,17 +42,20 @@ const ProductsGrid = ({ key, data }) => {
         <h2 className=" text-[14px] font-[600] font-OpenSans leading-[16px] mb-[10px]">
           {data?.title}
         </h2>
-        <CurrencyFormat
+        {/* <CurrencyFormat
           value={data?.newPrice}
           displayType={"text"}
           thousandSeparator={true}
           prefix={"#"}
           renderText={(value) => (
             <h2 className=" text-[16px] font-[600] font-OpenSans leading-[16px] mb-[1px]">
-              {value}
+              #{value}
             </h2>
           )}
-        />
+        /> */}
+        <h2 className=" text-[16px] font-[600] font-OpenSans leading-[16px] mb-[1px]">
+          #{data?.price}
+        </h2>
       </div>
       {/* <div className="flex gap-2 items-center">
         <span className=" text-[#CFCFCF] text-[14px] leading-[16px] font-medium font-Roboto ">

@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { InfinitySpin } from "react-loader-spinner";
 import { useDispatch } from "react-redux";
-import CurrencyFormat from "react-currency-format";
+// import CurrencyFormat from "react-currency-format";
 import BackgroundLayout from "@/layouts/BackgroundLayout";
 import Stack from "@/components/Stack";
 import Typography from "@/components/Typography";
@@ -69,9 +69,7 @@ const Checkout = () => {
 
       const getProduct = async (id) => {
         try {
-          const response = await axios.get(
-            `${BACKEND_URL}/products/${id}`
-          );
+          const response = await axios.get(`${BACKEND_URL}/products/${id}`);
           return response.data;
         } catch (error) {
           const message =
@@ -633,7 +631,7 @@ const Checkout = () => {
                                 X {product?.quantity}
                               </Typography>
                             </div>
-                            <CurrencyFormat
+                            {/* <CurrencyFormat
                               value={product?.price}
                               displayType={"text"}
                               thousandSeparator={true}
@@ -643,7 +641,10 @@ const Checkout = () => {
                                   {value}
                                 </span>
                               )}
-                            />
+                            /> */}
+                            <span className=" text-[#000000] text-[18px] leading-[160%] font-normal font-Roboto ">
+                              #{product?.price}
+                            </span>
                           </Stack>
                         </div>
                       );
@@ -659,7 +660,7 @@ const Checkout = () => {
                         Subtotal
                       </Typography>
 
-                      <CurrencyFormat
+                      {/* <CurrencyFormat
                         value={subtotal}
                         displayType={"text"}
                         thousandSeparator={true}
@@ -669,7 +670,10 @@ const Checkout = () => {
                             {value}
                           </span>
                         )}
-                      />
+                      /> */}
+                      <span className=" text-[#000000] text-[18px] leading-[160%] font-normal font-Roboto ">
+                        #{subtotal}
+                      </span>
                     </Stack>
 
                     <Stack
@@ -699,7 +703,7 @@ const Checkout = () => {
                               Lekki/Ajah:
                             </Typography>
                           </div>
-                          <CurrencyFormat
+                          {/* <CurrencyFormat
                             value={"2500"}
                             displayType={"text"}
                             thousandSeparator={true}
@@ -709,7 +713,10 @@ const Checkout = () => {
                                 {value}
                               </span>
                             )}
-                          />
+                          /> */}
+                          <span className=" text-[#000000] text-[18px] leading-[160%] font-normal font-Roboto ">
+                            #2500
+                          </span>
                         </div>
                         <div className="flex flex-col  gap-3 items-end ">
                           <div className="flex flex-row  gap-2 items-end ">
@@ -728,7 +735,7 @@ const Checkout = () => {
                               Mainland:
                             </Typography>
                           </div>
-                          <CurrencyFormat
+                          {/* <CurrencyFormat
                             value={"2000"}
                             displayType={"text"}
                             thousandSeparator={true}
@@ -738,7 +745,10 @@ const Checkout = () => {
                                 {value}
                               </span>
                             )}
-                          />
+                          /> */}
+                          <span className=" text-[#000000] text-[18px] leading-[160%] font-normal font-Roboto ">
+                            #2000
+                          </span>
                         </div>
                       </div>
                     </Stack>
@@ -753,7 +763,7 @@ const Checkout = () => {
                         Total
                       </Typography>
 
-                      <CurrencyFormat
+                      {/* <CurrencyFormat
                         value={subtotal + shippingAmount}
                         displayType={"text"}
                         thousandSeparator={true}
@@ -763,7 +773,10 @@ const Checkout = () => {
                             {value}
                           </span>
                         )}
-                      />
+                      /> */}
+                      <span className=" text-[#000000] text-[18px] leading-[160%] font-normal font-Roboto ">
+                        #{subtotal + shippingAmount}
+                      </span>
                     </Stack>
                   </Stack>
 

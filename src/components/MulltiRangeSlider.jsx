@@ -1,5 +1,5 @@
 import React from "react";
-import CurrencyFormat from "react-currency-format";
+// import CurrencyFormat from "react-currency-format";
 import Button from "./Button";
 
 const MultiRangeSlider = ({
@@ -22,17 +22,20 @@ const MultiRangeSlider = ({
               className="w-20 border rounded p-1"
             />
           </div>
-          <CurrencyFormat
+          {/* <CurrencyFormat
             value={minPrice}
             displayType={"text"}
             thousandSeparator={true}
             prefix={"#"}
             renderText={(value) => (
               <h2 className=" text-[#5B5959] text-[14px] font-[600] font-OpenSans leading-[16px] mb-[1px]">
-                {value}
+                #{value}
               </h2>
             )}
-          />
+          /> */}
+          <h2 className=" text-[#5B5959] text-[14px] font-[600] font-OpenSans leading-[16px] mb-[1px]">
+            #{value}
+          </h2>
         </div>
 
         <div className="flex w-full flex-wrap gap-4 items-center">
@@ -45,7 +48,7 @@ const MultiRangeSlider = ({
               className="w-20 border rounded p-1"
             />
           </div>
-          <CurrencyFormat
+          {/* <CurrencyFormat
             value={maxPrice}
             displayType={"text"}
             thousandSeparator={true}
@@ -55,7 +58,10 @@ const MultiRangeSlider = ({
                 {value}
               </h2>
             )}
-          />
+          /> */}
+          <h2 className=" text-[#5B5959] text-[14px] font-[600] font-OpenSans leading-[16px] mb-[1px]">
+            #{maxPrice}
+          </h2>
         </div>
 
         <Button
